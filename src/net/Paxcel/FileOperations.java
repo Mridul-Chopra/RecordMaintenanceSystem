@@ -11,9 +11,9 @@ import java.util.*;
 public class FileOperations {
 	
 	private static Map<Integer,Person> sortRecords_ = new TreeMap<Integer,Person>(); 	// TreeMap used for convenient sorting
-	private static List<Person> sortedRecords_ = new ArrayList<Person>();				//	contains sorted records
-	private static List<Person> originalRecords_= new ArrayList<Person>(); 				// contains original records for a while
-	private static List<Person> duplicateRecords_;										// contains duplicate records 
+	private static List<Person> sortedRecords_ = new ArrayList<Person>();			//	contains sorted records
+	private static List<Person> originalRecords_= new ArrayList<Person>(); 			// contains original records for a while
+	private static List<Person> duplicateRecords_;						// contains duplicate records 
 	
 	
 	
@@ -29,9 +29,9 @@ public class FileOperations {
 				
 				while( (line=reader.readLine())!=null )
 				{
-					record = new Person(); 						// making instance of the person
+					record = new Person(); 					// making instance of the person
 					record.setValues(line.split(","));			// setting values to attributes after splitting commas
-					sortRecords_.put(record.getId(),record);	//putting records in the TreeMap
+					sortRecords_.put(record.getId(),record);		//putting records in the TreeMap
 					originalRecords_.add(record);				//storing records in the ArrayList
 				}
 				
@@ -48,8 +48,8 @@ public class FileOperations {
 				
 				
 				 originalRecords_.removeAll(sortedRecords_);  	// remove duplicate entries from the original records
-				 duplicateRecords_ = originalRecords_; 			// pointing duplicateRecords to orignalRecords to represent duplicate records
-				 originalRecords_=null;							// originalRecords_ points to null so that cannot be used furthur
+				 duplicateRecords_ = originalRecords_; 		// pointing duplicateRecords to orignalRecords to represent duplicate records
+				 originalRecords_=null;				// originalRecords_ points to null so that cannot be used furthur
 				 
 				 
 		}
@@ -73,7 +73,7 @@ public class FileOperations {
 			)   // Getting two FileWriteres for writing into two files
 		{
 			writeThis(sortedRecords_,uniqueWriter);   		// writing sorted records to file
-			writeThis(duplicateRecords_,duplicateWriter);	// writing duplicate records to file
+			writeThis(duplicateRecords_,duplicateWriter);		// writing duplicate records to file
 			
 			/*
 				DISPLAYING MESSAGES TO THE USER
