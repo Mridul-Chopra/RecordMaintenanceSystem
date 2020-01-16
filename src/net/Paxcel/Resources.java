@@ -15,7 +15,7 @@ import org.apache.log4j.PropertyConfigurator;
  */
 public class Resources {
 	
-	public static Logger log ;				// Getting the logger
+	public static Logger log ;			// Getting the logger
 	public static Properties filepaths;		// getting the properties file that contains file paths
 	
 	
@@ -26,18 +26,18 @@ public class Resources {
 	{
 			try 
 			{
-			log = Logger.getLogger("GLOBAL");										// getting the logger			
-			Properties props = new Properties();									// properties object for log4j
-			props.load(new FileInputStream("src\\resources\\log4j.properties"));	// loading the properties file
-			PropertyConfigurator.configure(props);									// setting the configuration
-			log.setLevel(Level.ERROR);												// setting logging level
+			log = Logger.getLogger("GLOBAL");							// getting the logger			
+			Properties props = new Properties();							// properties object for log4j
+			props.load(new FileInputStream("src\\resources\\log4j.properties"));			// loading the properties file
+			PropertyConfigurator.configure(props);							// setting the configuration
+			log.setLevel(Level.ERROR);								// setting logging level
 			
 			}
 			
 			catch(Exception e)
 			{
 				System.out.print("Fatal Error occoured");	// Printing feedback on error encountered
-				System.exit(0);								// exiting the system
+				System.exit(0);					// exiting the system
 			}
 	}
 	
