@@ -48,24 +48,24 @@ public class Resources {
 	{
 		try 
 		{
-			filepaths= new Properties();													// Instantiating
+			filepaths= new Properties();							// Instantiating
 			filepaths.load(new FileInputStream("src\\resources\\FilePaths.properties"));	// Giving the path of properties file
-			PropertyConfigurator.configure(filepaths);										// setting the configuration
+			PropertyConfigurator.configure(filepaths);					// setting the configuration
 		}
 		
 		catch (FileNotFoundException e) 
 		{
-			log.error(e);																	// logging the error
+			log.error(e);										// logging the error
 			System.out.print("Fatal Error occoured.Cannot load file properties");			// Printing feedback on error encountered
-			System.exit(0);																	// Exiting the system
+			System.exit(0);										// Exiting the system
 		}
 		
 		
 		catch (IOException e) 
 		{
-			log.error(e);																	// logging the error
+			log.error(e);										// logging the error
 			System.out.print("Fatal Error occoured.Cannot load file properties");			// Printing feedback on error encountered
-			System.exit(0);																	// Exiting the system
+			System.exit(0);										// Exiting the system
 		}
 	}
 	
