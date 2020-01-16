@@ -27,7 +27,7 @@ public class Driver {
 		
 		try
 		{
-			Resources.loadResources();			// loading the necessary resources
+			Resources.loadResources();		// loading the necessary resources
 			FileOperations.performAction();		// Performing the operations
 		} 
 		catch (Exception e)
